@@ -1,0 +1,11 @@
+<div class='new-photo-container'> 
+		<%= link_to 'Nova Foto', new_photo_path, class: 'btn btn-primary' %>
+</div>
+<% if @photos.any? %>
+	<% @photos.each do |photo| %>
+	  <%= render photo %>
+   <% end %>
+<% else %>
+	<p class='alert alert-warning'>Você ainda não adicionou nenhuma foto. Não perca tempo e <%= link_to 'adicione uma foto', new_photo_path %> agora.
+<% end %>
+
